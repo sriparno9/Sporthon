@@ -1,0 +1,48 @@
+.navbarrr {
+    background: rgb(160, 62, 227);
+    background: linear-gradient(
+      167deg,
+      rgb(114, 62, 227) 0%,
+      rgba(112, 67, 212, 1) 50%,
+      rgba(74, 116, 235, 1) 100%
+    );
+    padding: 10px 0;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  .navbarrr-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .navbarrr-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .navvv-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navvv-item {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .navvv-item a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navvv-item a:hover {
+    text-decoration: none;
+  }

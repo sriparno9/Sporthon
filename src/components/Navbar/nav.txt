@@ -1,0 +1,65 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+  const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      if (isScrolled !== isNavbarScrolled) {
+        setIsNavbarScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isNavbarScrolled]);
+
+  useEffect(() => {
+    setIsNavbarFixed(isNavbarScrolled);
+
+    // Check if user is logged in
+    const user = sessionStorage.getItem('user');
+    setIsLoggedIn(!!user);
+  }, [isNavbarScrolled]);
+
+  return (
+    <nav
+      className={`navbar ${isNavbarFixed ? "fixed" : ""} ${
+        isNavbarScrolled ? "scrolled" : ""
+      }`}
+    >
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          <strong>𝕊𝕡𝕠𝕣𝕥𝕒𝕥𝕙𝕠𝕟</strong>
+        </Link>
+        <ul className="nav-menu">
+          {/* Other menu items */}
+          {/* ... */}
+
+          {isLoggedIn ? (
+            <li className="nav-item">
+              <Link to="/logout" className="nav-links">
+                <strong>Logout</strong>
+              </Link>
+            </li>
+          ) : (
+            <li className="nav-item">
+              <Link to="/login" className="nav-links">
+                <strong>Login</strong>
+              </Link>
+            </li>
+          )}
+        </ul>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;

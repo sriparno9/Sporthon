@@ -1,0 +1,19 @@
+.image-slider-container {
+  overflow: hidden;
+}
+
+.image-slider {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  & img {
+    flex: 0 0 auto;
+    /* width: 30rem; */
+    /* height: auto; */
+    height: 30rem;
+  }
+}

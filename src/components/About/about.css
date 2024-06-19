@@ -1,0 +1,64 @@
+.container-about {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-about,
+.right-about {
+  /* flex: 1; */
+}
+
+.sports-logo img {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.about-games-heading {
+  font-size: 40px;
+  margin-left: 150px;
+}
+
+.about-para {
+  color: rgb(138, 138, 138);
+  font-size: 15px;
+  margin-top: 35px;
+  margin-right: 20px;
+  padding: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container-about {
+    flex-direction: row;
+  }
+
+  .left-about {
+    flex: 2;
+  }
+
+  .right-about {
+    flex: 2;
+    padding: 20px;
+    margin-right: 200px;
+  }
+
+  .sports-logo img {
+    width: 25rem;
+    height: 15rem;
+    margin-left: 100px;
+  }
+
+  .about-games-heading {
+    font-size: 70px;
+    margin-left: 150px;
+  }
+
+  .about-para {
+    font-size: 20px;
+    margin-top: 35px;
+    margin-right: 20px;
+    padding: 30px;
+  }
+}
